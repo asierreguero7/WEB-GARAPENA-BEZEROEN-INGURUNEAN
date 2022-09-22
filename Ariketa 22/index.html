@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="js/control.js"></script>
+  </head>
+  <body>
+    <div class="col-4 border border-dark mx-auto">
+      <h1>Sartu zure datuak</h1>
+      <form>
+        <div class="row form-group">
+          <div class="col-9">
+            <br/>
+            <label for="rbs">Zuzentzeko era:</label><br/>
+            <div class="form-group" id="rbs">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="rb1"
+                  onchange="rb_aldatu()"
+                  checked
+                />
+                <label class="form-check-label" for="rb1"> Jauna </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="rb2"
+                  onchange="rb_aldatu()"
+                />
+                <label class="form-check-label" for="rb2"> Andrea </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <img src="img/pedro.jpg" class="img-thumbnail border border-dark" id="img" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tb1">Izena</label>
+          <input
+            type="text"
+            class="form-control"
+            id="tb1"
+            aria-describedby="emailHelp"
+            placeholder="Idatzi zure izena"
+          />
+          <label for="tb2">Abizena</label>
+          <input
+            type="text"
+            class="form-control"
+            id="tb2"
+            aria-describedby="emailHelp"
+            placeholder="Idatzi zure abizena"
+          />
+          <label for="tb3">Helbidea</label>
+          <input
+            type="text"
+            class="form-control"
+            id="tb3"
+            aria-describedby="emailHelp"
+            placeholder="Idatzi zure helbidea"
+          />
+        </div>
+        <div class="form-group">
+          <label for="select">Hiria</label>
+          <select class="form-control form-control-sm" id="select">
+            <option>Bergara</option>
+            <option>Eibar</option>
+            <option>Mendaro</option>
+          </select>
+        </div>
+        <label for="check">Zein nahiago duzu?</label>
+        <div class="form-group form-check" id="check">
+          <div>
+            <input type="checkbox" class="form-check-input" id="cb1" />
+            <label class="form-check-label" for="cb1">Liburuak</label>
+          </div>
+          <div>
+            <input type="checkbox" class="form-check-input" id="cb2" />
+            <label class="form-check-label" for="cb2">Pelikulak</label>
+          </div>
+        </div>
+      </form>
+      <button class="btn btn-primary" onclick="bidali()">Bidali</button>
+      <br />
+      <br />
+    </div>
+    <br /><br />
+    <div class="col-4 border border-dark mx-auto" id="emaitzak">
+      <h1>Sartu dituzun datuak</h1>
+      <form>
+        <div class="form-group">
+          <label for="izena">Izena</label><br />
+          <input type="text" id="izena" readonly />
+        </div>
+        <div class="form-group">
+          <label for="abizena">Abizena</label><br />
+          <input type="text" id="abizena" readonly />
+        </div>
+        <div class="form-group">
+          <label for="helbidea">Helbidea</label><br />
+          <input type="text" id="helbidea" readonly />
+        </div>
+        <div class="form-group">
+          <label for="hiria">Hiria</label><br />
+          <input type="text" id="hiria" readonly />
+        </div>
+        <div class="form-group">
+          <label for="nahiago">Nahiago dituzu</label><br />
+          <input type="text" id="nahiago" readonly />
+        </div>
+      </form>
+      <button
+        class="btn btn-primary"
+        onclick="document.getElementById('emaitzak').style.display = 'none'"
+      >
+        Ezkutatu Erantzunak
+      </button>
+      <br />
+      <br />
+    </div>
+    <script>
+      document.getElementById("emaitzak").style.display = "none";
+    </script>
+  </body>
+</html>
