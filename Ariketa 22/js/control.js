@@ -26,5 +26,6 @@ function bidali(){
     }else{
         document.getElementById('nahiago').value = "Ez duzu ezer gustoko"
     }
+    
     document.getElementById('emaitzak').style.display = "block"
 }
