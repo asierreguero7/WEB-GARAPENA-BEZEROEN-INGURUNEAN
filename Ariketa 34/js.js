@@ -5,10 +5,25 @@ $(document).ready(function () {
     $(".img").attr("src", "img/fire.png");
     switch (e.which) {
       case 37: //left arrow key
-        rotate(270);
-        $(".img").finish().animate({
-          left: "-=5",
-        });
+        if (e.ctrlKey) {
+          rotate(315);
+          $(".img").finish().animate({
+            left: "-=5",
+            top: "-=5",
+          });
+        } else if (e.shiftKey) {
+          rotate(225);
+          $(".img").finish().animate({
+            left: "-=5",
+            top: "+=5",
+          });
+        } else {
+          rotate(270);
+          $(".img").finish().animate({
+            left: "-=5",
+          });
+        }
+
         break;
       case 38: //up arrow key
         rotate(0);
@@ -17,10 +32,24 @@ $(document).ready(function () {
         });
         break;
       case 39: //right arrow key
-        rotate(90);
-        $(".img").finish().animate({
-          left: "+=5",
-        });
+        if (e.ctrlKey) {
+          rotate(45);
+          $(".img").finish().animate({
+            left: "+=5",
+            top: "-=5",
+          });
+        } else if (e.shiftKey) {
+          rotate(135);
+          $(".img").finish().animate({
+            left: "+=5",
+            top: "+=5",
+          });
+        } else {
+          rotate(90);
+          $(".img").finish().animate({
+            left: "+=5",
+          });
+        }
         break;
       case 40: //bottom arrow key
         rotate(180);
